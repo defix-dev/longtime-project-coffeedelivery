@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Contact Data Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/edit_contact_data_style.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: body"></div>
+<main>
+    <div class="main">
+        <p class="main__header">Форма смены данных</p>
+        <form method="post" th:action="@{/edit_contact_data/save}" class="main__form-container">
+                <!-- [ USERNAME INPUT ] -->
+            <div class="input-block">
+                <label for="phoneNumber">Номер телефона</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" class="base-input" th:value="${account.phoneNumber}"/>
+                <!-- [ PHONE NUMBER INPUT ] -->
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" class="base-input" th:value="${account.name}"/>
+                <!-- [ PASSWORD INPUT ] -->
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" class="base-input"/>
+                <!-- [ SAVE BUTTON ] -->
+            </div>
+            <div class="button-block">
+                <input type="submit" value="Сохранить"/>
+            </div>
+        </form>
+    </div>
+</main>
+<footer>
+    <div class="footer"></div>
+</footer>
+<script>
+    $(document).ready(() => {
+       $(".main__form-container").submit((e) => {
+           e.preventDefault();
+           const formData = new FormData(e.target);
+           const contactAccountDTO = {
+               phoneNumber: formData.get("phoneNumber"),
+               name: formData.get("name"),
+               password: formData.get("password")
+           };
+           $.ajax({
+               url: "/edit_contact_data/save",
+               type: "POST",
+               contentType: "application/json",
+               data: JSON.stringify(contactAccountDTO),
+               success: (data, textStatus, jqXHR) => {
+                   console.log(data);
+                   console.log(textStatus);
+                   console.log(jqXHR);
+                   // Получите заголовок Location
+                   const locationHeader = jqXHR.getResponseHeader("Location");
+
+                   // Перенаправьте пользователя
+                   if (locationHeader) {
+                       window.location.href = locationHeader;
+                   } else {
+                       console.error("Location header is missing in the response.");
+                   }
+               },
+           });
+       });
+    });
+</script>
+</body>
+</html>

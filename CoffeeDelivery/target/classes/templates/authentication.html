@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/css/authentication_page_style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Authentication Page</title>
+</head>
+<body>
+<main>
+    <div class="main">
+        <p class="main__header" id="main-reg-header">Форма регистрации</p>
+        <div class="main__auth-panel main__auth-panel--register">
+            <form method="post" th:action="@{/authentication/register}" class="register-form">
+                <div class="input-block">
+                    <label for="reg-phoneNumber">Номер телефона<p style="color: #FE7028">*</p></label>
+                    <input type="text" placeholder="Enter phone number..." id="reg-phoneNumber" name="reg-phoneNumber" class="base-input" />
+                    <label for="reg-username">Имя</label>
+                    <input type="text" placeholder="Enter username..." id="reg-username" name="reg-username" class="base-input" />
+                    <label for="reg-password">Пароль<p style="color: #FE7028">*</p></label>
+                    <input type="password" placeholder="Enter password..." id="reg-password" name="reg-password" class="base-input" />
+                    <label for="reg-repeat-password">Повторите пароль<p style="color: #FE7028">*</p></label>
+                    <input type="password" placeholder="Repeat password..." id="reg-repeat-password" name="reg-repeat-password" class="base-input" />
+                </div>
+                <div class="button-block">
+                    <input type="submit" value="Зарегистрироваться" id="reg-button" name="reg-button" class="button-block__general-btn" />
+                    <a href="#" class="button-block__other-btn" onclick="login()">Вход</a>
+                </div>
+            </form>
+        </div>
+        <p class="main__header" id="main-log-header" style="display: none">Форма авторизации</p>
+        <div class="main__auth-panel main__auth-panel--login" style="display: none">
+            <form method="post" th:action="@{/authentication}">
+                <div class="input-block">
+                    <label for="log-phoneNumber">Номер телефона<p style="color: #FE7028">*</p></label>
+                    <input type="text" placeholder="Enter phone number..." id="log-phoneNumber" name="log-phoneNumber" class="base-input" />
+                    <label for="log-password">Пароль<p style="color: #FE7028">*</p></label>
+                    <input type="password" placeholder="Enter password..." id="log-password" name="log-password" class="base-input" />
+                </div>
+                <div class="button-block">
+                    <input type="submit" value="Войти" id="log-button" name="log-button" class="button-block__general-btn" />
+                    <a href="#" class="button-block__other-btn" onclick="register()">Регистрация</a>
+                </div>
+            </form>
+        </div>
+        <a th:href="@{/remember_password}" style="display: none">Remember password</a>
+        <p th:if="${param.error}" style="color:red">Invalid username or password</p>
+        <p th:if="${param.logout}" style="color:green">You have been logged out</p>
+    </div>
+</main>
+<footer>
+    <div class="footer"></div>
+</footer>
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+<script>
+    $(document).ready(() => {
+        $(".register-form").submit((e) => {
+            e.preventDefault();
+            console.log(this);
+            console.log(e);
+            const formData = new FormData(e.target);
+           const accountDTO = {
+               phoneNumber: formData.get("reg-phoneNumber"),
+               password: formData.get("reg-password"),
+               name: formData.get("reg-username"),
+               confirmPassword: formData.get("reg-repeat-password")
+           };
+
+            $.ajax({
+                url: "/authentication/register",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(accountDTO),
+                success: () => {
+                    console.log("SUCCESS");
+                    window.location.href = "/home";
+                },
+                error: (xhr) => {
+                    try {
+                        const parsedJson = JSON.parse(xhr.responseText);
+                        let errors = "Пожалуйста проверьте корректность введенных данных:\n";
+                        for(let i = 0; i < parsedJson.length; i++) {
+                            for(const key in parsedJson[i]) {
+                                errors += `${i + 1}. [${key}] ${parsedJson[i][key]}\n`;
+                            }
+                        }
+                        alert(errors);
+                    } catch {
+                        alert(xhr.responseText);
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script>
+    regPanel = document.querySelector(".main__auth-panel--register");
+    regHeader = document.getElementById("main-reg-header");
+    logPanel = document.querySelector(".main__auth-panel--login");
+    logHeader = document.getElementById("main-log-header");
+
+    function login() {
+        regPanel.style.display = "none";
+        regHeader.style.display = "none";
+        logPanel.style.display = "grid";
+        logHeader.style.display = "flex block";
+    }
+
+    function register() {
+        regPanel.style.display = "grid";
+        regHeader.style.display = "flex block";
+        logPanel.style.display = "none";
+        logHeader.style.display = "none";
+    }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+       const urlParams = new URLSearchParams(window.location.search);
+       const currentForm = urlParams.get("form");
+
+       if(currentForm == "register") {
+           register()
+       }
+       else {
+           login()
+       }
+    });
+</script>
+</body>
+</html>

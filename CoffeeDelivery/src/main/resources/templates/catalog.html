@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/catalog_page_style.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery-3.7.1.min.js}"></script>
+    <script>
+        $(document).ready(() => {
+            $(".filter-type").click((event) => {
+               $.ajax({
+                   url: "/catalog/change_filter_type",
+                   type: "POST",
+                   data: { type: event.target.innerHTML }
+               });
+            });
+
+            $(".price-input__min-price--input").change((event) => {
+                $.ajax({
+                    url: "/catalog/change_filter_minPrice",
+                    type: "POST",
+                    data: { minPrice: event.target.value }
+                });
+            });
+
+            $(".price-input__max-price--input").change((event) => {
+                $.ajax({
+                    url: "/catalog/change_filter_maxPrice",
+                    type: "POST",
+                    data: { maxPrice: event.target.value }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div th:replace="fragments/header :: body"></div>
+<nav>
+    <div class="nav">
+        <div class="nav__search-panel">
+            <input
+                    type="search"
+                    class="nav__search-panel--input base-input"/>
+            <a href="#" class="nav__search-panel--button" onclick="searchItems()"><img th:src="@{/src/public/search_icon.png}" /></a>
+            <a href="#" class="nav__search-panel--button" onclick="executeFilterButton()"><img th:src="@{/src/public/filter_icon.png}" /></a>
+        </div>
+            <div class="nav__filter-panel">
+            <div class="filter-property filter-property__type">
+                <p class="filter-property__header">
+                    Тип товара
+                </p>
+                <ul th:each="type : ${product_types}">
+                    <a href="#" class="filter-type"><li th:text="${type}"></li></a>
+                </ul>
+            </div>
+            <div class="filter-property filter-property__price">
+                <p class="filter-property__header">
+                    Ценовая категория
+                </p>
+                <div class="price-input">
+                    <div class="price-input__min-price">
+                        <label for="price-input__min-price--input">От</label>
+                        <input type="number" id="price-input__min-price--input" class="base-input price-input__min-price--input" />
+                    </div>
+                    <div class="price-input__max-price">
+                        <label for="price-input__max-price--input">До</label>
+                        <input type="number" id="price-input__max-price--input" class="base-input price-input__max-price--input" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="main">
+        <div class="main__info-header" id="info-header">
+        </div>
+        <div class="main__catalog-items" id="root">
+
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer"></div>
+</footer>
+<script th:src="@{/js/catalog.bundle.js}"></script>
+<script>
+    let filterOpenState = true;
+    const filterPanel = document.querySelector(".nav__filter-panel");
+
+    function executeFilterButton() {
+        if(filterOpenState)
+            hide();
+        else
+            show();
+
+        function hide() {
+            filterOpenState = false;
+            filterPanel.style.transform = "scaleY(0)";
+        }
+
+        function show() {
+            filterOpenState = true;
+            filterPanel.style.transform = "scaleY(1)";
+        }
+    }
+</script>
+</body>
+</html>

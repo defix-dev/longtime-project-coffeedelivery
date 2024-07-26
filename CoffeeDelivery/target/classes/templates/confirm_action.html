@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Action Page</title>
+</head>
+<header>
+    <div class="header"></div>
+</header>
+<body>
+    <main>
+        <div class="main">
+            <p class="main-headerName">Confirm Action</p>
+            <form method="post" th:action="@{/confirm_action/check_password}">
+                <!-- [ PASSWORD INPUT ] -->
+                <label for="confirm-password">Чтобы удостовериться, что аккаунт принадлежит действительно вам, пожалуйста введите пароль</label>
+                <input type="password" id="confirm-password" name="confirm-password" class="base-input"/>
+                <!-- [ DONE BUTTON ] -->
+                <input type="submit" value="Готово"/>
+            </form>
+        </div>
+    </main>
+<footer>
+    <div class="footer"></div>
+</footer>
+</body>
+</html>
