@@ -32,7 +32,7 @@
                 <div class="feedback-content" id="root">
                 </div>
                 <div class="feedback-more-layout">
-                    <a class="feedback-more-layout__more-btn" onclick="loadFeedbacks()"><img th:src="@{/src/public/more_icon.png}">Загрузить еще</a>
+                    <a class="feedback-more-layout__more-btn load-fdbcks-btn"><img th:src="@{/src/public/more_icon.png}">Загрузить еще</a>
                 </div>
             </div>
             <div class="main__input-feedback" th:if="${is_authenticated}">
@@ -47,5 +47,6 @@
     <div class="footer"></div>
 </footer>
 <script th:src="@{/js/home.bundle.js}"></script>
+<script th:src="@{/js/home.js}"></script>
 </body>
 </html>

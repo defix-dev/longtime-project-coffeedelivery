@@ -35,11 +35,14 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
+        http.headers(header -> header
+                .contentSecurityPolicy(pd -> pd.policyDirectives("script-src 'self'"))
+                                .frameOptions(ops -> ops.deny())
+                ).csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(
                         httpCustomizer ->
                                 httpCustomizer
-                                        .requestMatchers("/instruction", "/js/**", "/src/**", "/site_error", "/css/**", "/images/**", "/home/**", "/", "/authentication", "/authentication/**", "/remember_password")
+                                        .requestMatchers("/api/**", "/instruction", "/js/**", "/src/**", "/site_error", "/css/**", "/images/**", "/home/**", "/", "/authentication", "/authentication/**", "/remember_password")
                                         .permitAll()
                                         .anyRequest()
                                         .authenticated()

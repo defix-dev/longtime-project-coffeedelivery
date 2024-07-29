@@ -8,6 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import java.io.IOException;
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -22,8 +29,17 @@ public class HomeService {
         this.accountService = accountService;
     }
 
-    public boolean isAuthenticated() {
-        return accountService.isAuthenticated();
+    public boolean isAuthenticated(HttpSession session) throws IOException, InterruptedException {
+        CookieHandler manager = new CookieManager();
+        CookieHandler.setDefault(manager);
+        HttpClient client = HttpClient.newBuilder().cookieHandler(CookieHandler.getDefault()).build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8888/authentication/check_account_status"))
+                .header("Content-Type", "application/json")
+                .header("Cookie", "JSESSIONID=" + session.getId())
+                .GET().build();
+        String response = client.send(request, HttpResponse.BodyHandlers.ofString()).body();
+        return Boolean.valueOf(response);
     }
 
     public void setupFeedbackOptions(HttpSession session) {

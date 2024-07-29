@@ -8,33 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/catalog_page_style.css}" />
     <script type="text/javascript" th:src="@{/js/jquery-3.7.1.min.js}"></script>
-    <script>
-        $(document).ready(() => {
-            $(".filter-type").click((event) => {
-               $.ajax({
-                   url: "/catalog/change_filter_type",
-                   type: "POST",
-                   data: { type: event.target.innerHTML }
-               });
-            });
-
-            $(".price-input__min-price--input").change((event) => {
-                $.ajax({
-                    url: "/catalog/change_filter_minPrice",
-                    type: "POST",
-                    data: { minPrice: event.target.value }
-                });
-            });
-
-            $(".price-input__max-price--input").change((event) => {
-                $.ajax({
-                    url: "/catalog/change_filter_maxPrice",
-                    type: "POST",
-                    data: { maxPrice: event.target.value }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
 <div th:replace="fragments/header :: body"></div>
@@ -44,8 +17,8 @@
             <input
                     type="search"
                     class="nav__search-panel--input base-input"/>
-            <a href="#" class="nav__search-panel--button" onclick="searchItems()"><img th:src="@{/src/public/search_icon.png}" /></a>
-            <a href="#" class="nav__search-panel--button" onclick="executeFilterButton()"><img th:src="@{/src/public/filter_icon.png}" /></a>
+            <a href="#" class="nav__search-panel--button search-btn"><img th:src="@{/src/public/search_icon.png}" /></a>
+            <a href="#" class="nav__search-panel--button filter-btn"><img th:src="@{/src/public/filter_icon.png}" /></a>
         </div>
             <div class="nav__filter-panel">
             <div class="filter-property filter-property__type">
@@ -87,26 +60,6 @@
     <div class="footer"></div>
 </footer>
 <script th:src="@{/js/catalog.bundle.js}"></script>
-<script>
-    let filterOpenState = true;
-    const filterPanel = document.querySelector(".nav__filter-panel");
-
-    function executeFilterButton() {
-        if(filterOpenState)
-            hide();
-        else
-            show();
-
-        function hide() {
-            filterOpenState = false;
-            filterPanel.style.transform = "scaleY(0)";
-        }
-
-        function show() {
-            filterOpenState = true;
-            filterPanel.style.transform = "scaleY(1)";
-        }
-    }
-</script>
+<script th:src="@{/js/catalog.js}"></script>
 </body>
 </html>

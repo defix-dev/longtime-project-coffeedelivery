@@ -1,0 +1,1 @@
+document.querySelector(".load-fdbcks-btn").addEventListener("click", loadFeedbacks);

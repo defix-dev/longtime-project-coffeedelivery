@@ -11,12 +11,14 @@ export default function BasketList({data}) {
                 <th>Название</th>
                 <th>Цена</th>
                 <th>Количество</th>
-                <th className="main__basket-panel--action">Действие</th>
+                <th className="action-button action-button__delete">Удалить</th>
+                <th className="action-button action-button__buy">Купить</th>
             </tr>
             </thead>
             <tbody>
             {!isEmpty && data.map(item => <BasketItem data={item} key={item.id} />)}
             {isEmpty && <tr>
+                <td>-</td>
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>

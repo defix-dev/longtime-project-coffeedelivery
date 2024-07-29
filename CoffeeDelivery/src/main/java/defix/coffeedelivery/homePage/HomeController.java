@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,8 +28,8 @@ public class HomeController {
     }
 
     @ModelAttribute("is_authenticated")
-    public boolean isAuthenticated() {
-        return homeService.isAuthenticated();
+    public boolean isAuthenticated(HttpSession session) throws IOException, InterruptedException {
+        return homeService.isAuthenticated(session);
     }
 
     @GetMapping({"","/"})
@@ -42,7 +43,7 @@ public class HomeController {
         return Redirect.changePage(URLConstant.HOME);
     }
 
-    @GetMapping("/home/load_feedbacks")
+    @GetMapping("/api/load_feedbacks")
     @ResponseBody
     public ResponseEntity<Map<String, FeedbackDTO>> loadFeedbacks(HttpSession session) {
         return ResponseEntity.ok(homeService.loadFeedbacks(session));

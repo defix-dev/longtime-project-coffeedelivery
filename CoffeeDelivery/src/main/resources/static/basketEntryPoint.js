@@ -8,7 +8,7 @@ const root = createRoot(document.getElementById("root"));
 
 $(document).ready(() => {
     $.ajax({
-        url: "/basket/get_baskets",
+        url: "/api/get_baskets",
         type: "GET",
         success: (data) => {
             const resultData = []

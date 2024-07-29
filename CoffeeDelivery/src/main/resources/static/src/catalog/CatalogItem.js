@@ -51,7 +51,7 @@ export default function CatalogItem({ data }) {
             <img className="catalog-item__preview" src={icon} alt={data.name} ref={imageRef}/>
             <p className="catalog-item__name">{data.name}</p>
             <a className="catalog-item__basket-btn" onClick={() => addProductToBasket(data.id)}>В корзину</a>
-            <p className="catalog-item__price" ref={priceRef}>{data.price}</p>
+            <p className="catalog-item__price" ref={priceRef}>{data.price} RUB</p>
         </div>
     );
 }

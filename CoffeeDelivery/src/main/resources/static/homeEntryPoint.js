@@ -11,7 +11,7 @@ const root = createRoot(document.getElementById('root'));
 
 export function loadFeedbacks() {
     $.ajax({
-        url: "/home/load_feedbacks",
+        url: "/api/load_feedbacks",
         type: "GET",
         success: (data) => {
             const resultData = []

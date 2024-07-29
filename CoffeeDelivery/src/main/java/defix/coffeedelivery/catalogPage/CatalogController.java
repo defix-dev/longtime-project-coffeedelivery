@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @Controller
-@RequestMapping("/catalog")
 public class CatalogController {
     private final CatalogService catalogService;
 
@@ -22,7 +21,7 @@ public class CatalogController {
         this.catalogService = catalogService;
     }
 
-    @GetMapping
+    @GetMapping("/catalog")
     public String catalog() {
         return Redirect.changePage(URLConstant.CATALOG);
     }
@@ -34,31 +33,31 @@ public class CatalogController {
                         .map(value -> value.getFullName()).toList();
     }
 
-    @PostMapping("/change_filter_type")
+    @PostMapping("/catalog/change_filter_type")
     public ResponseEntity<Void> changeFilterType(@RequestParam String type) {
         catalogService.changeFilterType(type);
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/change_filter_minPrice")
+    @PostMapping("/catalog/change_filter_minPrice")
     public ResponseEntity<Void> changeFilterMinPrice(@RequestParam int minPrice) {
         catalogService.changeFilterMinPrice(minPrice);
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/change_filter_maxPrice")
+    @PostMapping("/catalog/change_filter_maxPrice")
     public ResponseEntity<Void> changeFilterMaxPrice(@RequestParam int maxPrice) {
         catalogService.changeFilterMaxPrice(maxPrice);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/search")
+    @GetMapping("/api/search")
     @ResponseBody
     public ResponseEntity<Map<Integer, ProductDTO>> getSearchItems(@RequestParam("value") String searchValue) {
         return ResponseEntity.ok().body(catalogService.getSearchItems(searchValue));
     }
 
-    @PostMapping("/add_to_basket")
+    @PostMapping("/catalog/add_to_basket")
     public ResponseEntity<Void> addProductToBasket(@RequestParam("id") int productId) {
         catalogService.addProductToBasket(productId);
         return ResponseEntity.ok().build();

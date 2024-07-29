@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @Controller
-@RequestMapping("/basket")
 public class BasketController {
     private final BasketService basketService;
     private final AccountService accountService;
@@ -25,19 +24,19 @@ public class BasketController {
         this.accountService = accountService;
     }
 
-    @GetMapping("/get_baskets")
+    @GetMapping("/api/get_baskets")
     @ResponseBody
     public ResponseEntity<Set<BasketDTO>> getBaskets() {
         return ResponseEntity.ok().body(basketService
                 .convertBasketToDTO(getAccountBaskets()));
     }
 
-    @GetMapping
+    @GetMapping("/basket")
     public String getBasketPage() {
         return Redirect.changePage(URLConstant.BASKET);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("basket/delete")
     public ResponseEntity<Void> deleteBasket(@RequestParam("id") int basketId) {
             basketService.deleteBasket(basketId, getAccountBaskets());
             return ResponseEntity.ok().build();
