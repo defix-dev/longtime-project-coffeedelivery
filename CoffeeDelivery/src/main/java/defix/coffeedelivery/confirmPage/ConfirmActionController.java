@@ -3,6 +3,7 @@ package defix.coffeedelivery.confirmPage;
 import defix.coffeedelivery.configurations.URLConstant;
 import defix.coffeedelivery.confirmPage.RequestActions.IRequestAction;
 import defix.coffeedelivery.services.confirmAction.ConfirmActionService;
+import defix.coffeedelivery.services.interceptors.restartCondition.IRestartCondition;
 import defix.coffeedelivery.services.redirectors.ErrorRedirect;
 import defix.coffeedelivery.services.redirectors.Redirect;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @SessionAttributes("request_action")
 @RequestMapping("/confirm_action")
-public class ConfirmActionController {
+public class ConfirmActionController implements IRestartCondition {
     private final ConfirmActionService confirmActionService;
 
     private IRequestAction requestAction;
@@ -29,10 +30,9 @@ public class ConfirmActionController {
 
     @GetMapping
     public String confirmAction(Model model) {
-        if(!model.containsAttribute("request_action")) {
+        if (!model.containsAttribute("request_action")) {
             return Redirect.redirect(new ErrorRedirect(HttpStatus.BAD_REQUEST));
-        }
-        else {
+        } else {
             requestAction = (IRequestAction) model.getAttribute("request_action");
         }
 
@@ -46,5 +46,17 @@ public class ConfirmActionController {
         headers.setLocation(requestAction.getLocation());
         requestAction.executeRequest();
         return new ResponseEntity<>(headers, HttpStatus.FOUND);
+    }
+
+    @Override
+    public String[] getAttributes() {
+        return new String[]{
+                "request_action"
+        };
+    }
+
+    @Override
+    public String getUrl() {
+        return "/confirm_action";
     }
 }

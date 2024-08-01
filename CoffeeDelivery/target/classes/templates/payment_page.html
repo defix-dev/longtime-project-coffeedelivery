@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/payment_page_style.css}">
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: body"></div>
+<main>
+    <div class="main">
+        <div class="main__info-block">
+            <div class="info-header">
+                <p class="info-header__main">Информация о заказе</p>
+                <p class="info-header__additional">Перед оплатой внимательно ознакомьтесь с информацией</p>
+            </div>
+            <div class="info-panel">
+                <div class="info-panel__element">
+                    <p class="info-panel__element--key">Наименование</p>
+                    <p class="info-panel__element--value" th:text="${payment_dto.name}">PRODUCT_NAME</p>
+                </div>
+                <div class="info-panel__element">
+                    <p class="info-panel__element--key">Тип продукта</p>
+                    <p class="info-panel__element--value" th:text="${payment_dto.type}">PRODUCT_TYPE</p>
+                </div>
+                <div class="info-panel__element">
+                    <p class="info-panel__element--key">ID Продукта</p>
+                    <p class="info-panel__element--value" th:text="${payment_dto.productId}">PRODUCT_ID</p>
+                </div>
+                <div class="info-panel__element">
+                    <p class="info-panel__element--key">Количество</p>
+                    <p class="info-panel__element--value" th:text="${payment_dto.count}">PRODUCT_COUNT</p>
+                </div>
+                <div class="info-panel__element">
+                    <p class="info-panel__element--key">Цена</p>
+                    <p class="info-panel__element--value" th:text="${payment_dto.price}">PRODUCT_PRICE</p>
+                </div>
+            </div>
+        </div>
+        <div class="main__requisites-block">
+            <p class="requisites-header">Форма заполнения реквизитов</p>
+            <form method="post" th:action="@{/payment/perform}" class="requisites-container">
+                <div class="requisites-block">
+                    <div class="requisites-block__single-input">
+                        <label for="card-number">Номер карты<p style="color: #FE7028">*</p></label>
+                        <input type="number" name="card-number" id="card-number" class="base-input"/>
+                    </div>
+                    <div class="requisites-block__group-input">
+                        <div class="requisites-block__group-input--one">
+                            <label for="active-data">Дата<p style="color: #FE7028">*</p></label>
+                            <input type="date" name="active-data" id="active-data" class="base-input"/>
+                        </div>
+                        <div class="requisites-block__group-input--two">
+                            <label for="cvv-value">CVV<p style="color: #FE7028">*</p></label>
+                            <input type="number" name="cvv-value" id="cvv-value" class="base-input"/>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Оплатить" id="buy-button" />
+                <p>Мы используем <u>платежный шлюз Stripe</u></p>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -15,6 +15,6 @@ public class ErrorRedirect implements IRedirect {
 
     @Override
     public void executeLogic() {
-        finalUrl = Redirect.buildRedirectUrl("site_error?status=" + status.value() + " " + status.getReasonPhrase());
+        finalUrl = Redirect.buildRedirectUrl("error?status=" + status.value() + " " + status.getReasonPhrase());
     }
 }

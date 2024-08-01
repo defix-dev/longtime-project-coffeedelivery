@@ -12,10 +12,11 @@ public enum URLConstant {
     EDIT_CONTACT_DATA("edit_contact_data"),
     ERROR_PAGE("error"),
     INSTRUCTION("instruction"),
-    REMEMBER_PASSWORD("instruction"),
+    REMEMBER_PASSWORD("remember_password"),
     SUCCESS_LOGOUT("success_logout"),
     CURRENT_ORDERS("current_orders"),
-    ORDER_HISTORY("order_history");
+    ORDER_HISTORY("order_history"),
+    PAYMENT_PAGE("payment");
 
     private final String pageName;
 

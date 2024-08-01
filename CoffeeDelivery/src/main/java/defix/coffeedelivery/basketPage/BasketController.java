@@ -9,11 +9,13 @@ import defix.coffeedelivery.services.redirectors.Redirect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 @Controller
+@SessionAttributes("payment_dto")
 public class BasketController {
     private final BasketService basketService;
     private final AccountService accountService;
@@ -27,7 +29,7 @@ public class BasketController {
     @GetMapping("/api/get_baskets")
     @ResponseBody
     public ResponseEntity<Set<BasketDTO>> getBaskets() {
-        return ResponseEntity.ok().body(basketService
+        return ResponseEntity.ok().body(BasketService
                 .convertBasketToDTO(getAccountBaskets()));
     }
 
@@ -36,10 +38,16 @@ public class BasketController {
         return Redirect.changePage(URLConstant.BASKET);
     }
 
-    @DeleteMapping("basket/delete")
+    @DeleteMapping("/basket/delete")
     public ResponseEntity<Void> deleteBasket(@RequestParam("id") int basketId) {
             basketService.deleteBasket(basketId, getAccountBaskets());
             return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/basket/buy")
+    public ResponseEntity<Void> toPayment(@RequestParam(value = "id", required = true) int id,
+                                          Model model) {
+        return basketService.toPayment(id, model);
     }
 
     private Set<Basket> getAccountBaskets() {

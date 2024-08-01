@@ -13,13 +13,8 @@ $(document).ready(() => {
             contentType: "application/json",
             data: JSON.stringify(contactAccountDTO),
             success: (data, textStatus, jqXHR) => {
-                console.log(data);
-                console.log(textStatus);
-                console.log(jqXHR);
-                // Получите заголовок Location
                 const locationHeader = jqXHR.getResponseHeader("Location");
 
-                // Перенаправьте пользователя
                 if (locationHeader) {
                     window.location.href = locationHeader;
                 } else {
