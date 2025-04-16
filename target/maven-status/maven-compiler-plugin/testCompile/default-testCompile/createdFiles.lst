@@ -1,0 +1,7 @@
+defix/coffeedelivery/test/controller/ControllerTests.class
+defix/coffeedelivery/home/api/controller/HomeControllerTest.class
+defix/coffeedelivery/test/controller/BasketControllerTests.class
+defix/coffeedelivery/test/controller/AuthControllerTests.class
+defix/coffeedelivery/test/app/PetProjectCoffeeDeliveryApplicationTests.class
+defix/coffeedelivery/test/controller/CatalogControllerTests.class
+defix/coffeedelivery/contactData/api/controller/EditContactDataControllerTest.class
