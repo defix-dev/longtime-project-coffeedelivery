@@ -1,4 +1,4 @@
-package defix.coffeedelivery.contactData.api.controller;
+package defix.coffeedelivery.test.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import defix.coffeedelivery.auth.service.AccountService;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ControllerTests
-class EditContactDataControllerTest {
+class EditContactDataControllerTests {
 
     @Autowired
     private MockMvc mockMvc;

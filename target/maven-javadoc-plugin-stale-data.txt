@@ -1,0 +1,175 @@
+@options
+@packages
+-classpath
+'/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/3.2.5/spring-boot-starter-thymeleaf-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.5/spring-boot-starter-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.5/spring-boot-starter-logging-3.2.5.jar:/home/d3fix/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/home/d3fix/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/home/d3fix/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/home/d3fix/.m2/repository/org/slf4j/jul-to-slf4j/2.0.13/jul-to-slf4j-2.0.13.jar:/home/d3fix/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/d3fix/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/home/d3fix/.m2/repository/org/thymeleaf/thymeleaf-spring6/3.1.2.RELEASE/thymeleaf-spring6-3.1.2.RELEASE.jar:/home/d3fix/.m2/repository/org/thymeleaf/thymeleaf/3.1.2.RELEASE/thymeleaf-3.1.2.RELEASE.jar:/home/d3fix/.m2/repository/org/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar:/home/d3fix/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.5/spring-boot-starter-web-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.5/spring-boot-starter-json-3.2.5.jar:/home/d3fix/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar:/home/d3fix/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar:/home/d3fix/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar:/home/d3fix/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.4/jackson-datatype-jdk8-2.15.4.jar:/home/d3fix/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.4/jackson-datatype-jsr310-2.15.4.jar:/home/d3fix/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.4/jackson-module-parameter-names-2.15.4.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.5/spring-boot-starter-tomcat-3.2.5.jar:/home/d3fix/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar:/home/d3fix/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.20/tomcat-embed-websocket-10.1.20.jar:/home/d3fix/.m2/repository/org/springframework/spring-web/6.1.6/spring-web-6.1.6.jar:/home/d3fix/.m2/repository/io/micrometer/micrometer-observation/1.12.5/micrometer-observation-1.12.5.jar:/home/d3fix/.m2/repository/io/micrometer/micrometer-commons/1.12.5/micrometer-commons-1.12.5.jar:/home/d3fix/.m2/repository/org/springframework/spring-webmvc/6.1.6/spring-webmvc-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot/3.2.5/spring-boot-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.5/spring-boot-autoconfigure-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/spring-core/6.1.6/spring-core-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-jcl/6.1.6/spring-jcl-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/security/spring-security-core/6.2.4/spring-security-core-6.2.4.jar:/home/d3fix/.m2/repository/org/springframework/security/spring-security-crypto/6.2.4/spring-security-crypto-6.2.4.jar:/home/d3fix/.m2/repository/org/springframework/security/spring-security-web/6.2.4/spring-security-web-6.2.4.jar:/home/d3fix/.m2/repository/org/springframework/security/spring-security-taglibs/6.2.4/spring-security-taglibs-6.2.4.jar:/home/d3fix/.m2/repository/org/springframework/security/spring-security-acl/6.2.4/spring-security-acl-6.2.4.jar:/home/d3fix/.m2/repository/org/springframework/spring-jdbc/6.1.6/spring-jdbc-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-aop/6.1.6/spring-aop-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-beans/6.1.6/spring-beans-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-context/6.1.6/spring-context-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-expression/6.1.6/spring-expression-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.5/spring-boot-starter-data-jpa-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.5/spring-boot-starter-aop-3.2.5.jar:/home/d3fix/.m2/repository/org/aspectj/aspectjweaver/1.9.22/aspectjweaver-1.9.22.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.5/spring-boot-starter-jdbc-3.2.5.jar:/home/d3fix/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/home/d3fix/.m2/repository/org/springframework/data/spring-data-jpa/3.2.5/spring-data-jpa-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/data/spring-data-commons/3.2.5/spring-data-commons-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/spring-orm/6.1.6/spring-orm-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-aspects/6.1.6/spring-aspects-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/data/spring-data-redis/3.3.1/spring-data-redis-3.3.1.jar:/home/d3fix/.m2/repository/org/springframework/data/spring-data-keyvalue/3.2.5/spring-data-keyvalue-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/spring-tx/6.1.6/spring-tx-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-oxm/6.1.6/spring-oxm-6.1.6.jar:/home/d3fix/.m2/repository/org/springframework/spring-context-support/6.1.6/spring-context-support-6.1.6.jar:/home/d3fix/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/home/d3fix/.m2/repository/redis/clients/jedis/5.1.3/jedis-5.1.3.jar:/home/d3fix/.m2/repository/org/apache/commons/commons-pool2/2.12.0/commons-pool2-2.12.0.jar:/home/d3fix/.m2/repository/org/json/json/20231013/json-20231013.jar:/home/d3fix/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.5/spring-boot-starter-validation-3.2.5.jar:/home/d3fix/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.20/tomcat-embed-el-10.1.20.jar:/home/d3fix/.m2/repository/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar:/home/d3fix/.m2/repository/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar:/home/d3fix/.m2/repository/org/hibernate/orm/hibernate-core/6.5.1.Final/hibernate-core-6.5.1.Final.jar:/home/d3fix/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/d3fix/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/d3fix/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/home/d3fix/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/d3fix/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/home/d3fix/.m2/repository/net/bytebuddy/byte-buddy/1.14.13/byte-buddy-1.14.13.jar:/home/d3fix/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/d3fix/.m2/repository/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar:/home/d3fix/.m2/repository/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar:/home/d3fix/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.5/spring-boot-starter-security-3.2.5.jar:/home/d3fix/.m2/repository/org/springframework/security/spring-security-config/6.2.4/spring-security-config-6.2.4.jar:/home/d3fix/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/home/d3fix/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/d3fix/.m2/repository/org/glassfish/jakarta.el/3.0.3/jakarta.el-3.0.3.jar:/home/d3fix/.m2/repository/org/hibernate/hibernate-entitymanager/5.6.15.Final/hibernate-entitymanager-5.6.15.Final.jar:/home/d3fix/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/home/d3fix/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+17
+-sourcepath
+'/home/d3fix/IdeaProjects/pet-project-coffee-delivery/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'pet-project-coffee-delivery 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'pet-project-coffee-delivery 0.0.1-SNAPSHOT API'
+defix.coffeedelivery
+defix.coffeedelivery.auth.api.advice
+defix.coffeedelivery.auth.api.controller
+defix.coffeedelivery.auth.api.dto.request
+defix.coffeedelivery.auth.config
+defix.coffeedelivery.auth.exception
+defix.coffeedelivery.auth.service
+defix.coffeedelivery.basket.api.advice
+defix.coffeedelivery.basket.api.controller
+defix.coffeedelivery.basket.api.dto.response
+defix.coffeedelivery.basket.exception
+defix.coffeedelivery.basket.service
+defix.coffeedelivery.catalog.api.controller
+defix.coffeedelivery.catalog.api.dto.response
+defix.coffeedelivery.catalog.config
+defix.coffeedelivery.catalog.exception
+defix.coffeedelivery.catalog.service
+defix.coffeedelivery.catalog.service.filter
+defix.coffeedelivery.common.config
+defix.coffeedelivery.common.db.entity
+defix.coffeedelivery.common.db.repository
+defix.coffeedelivery.confirm.api.advice
+defix.coffeedelivery.confirm.api.controller
+defix.coffeedelivery.confirm.exception
+defix.coffeedelivery.confirm.interceptor
+defix.coffeedelivery.confirm.service
+defix.coffeedelivery.confirm.service.requestAction
+defix.coffeedelivery.contactData.api.controller
+defix.coffeedelivery.contactData.api.dto.request
+defix.coffeedelivery.contactData.api.dto.response
+defix.coffeedelivery.error.api.controller
+defix.coffeedelivery.home.api.advice
+defix.coffeedelivery.home.api.controller
+defix.coffeedelivery.home.api.dto.response
+defix.coffeedelivery.home.config
+defix.coffeedelivery.home.exception
+defix.coffeedelivery.home.service
+defix.coffeedelivery.home.service.dto
+defix.coffeedelivery.logout.api.controller
+defix.coffeedelivery.payment.api.controller
+defix.coffeedelivery.payment.api.dto.request
+defix.coffeedelivery.redirect.service
+defix.coffeedelivery.redirect.service.redirector
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/3.2.5/spring-boot-starter-thymeleaf-3.2.5.jar = 1744714554293
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.5/spring-boot-starter-3.2.5.jar = 1744714538324
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.5/spring-boot-starter-logging-3.2.5.jar = 1744714555531
+/home/d3fix/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar = 1744714555875
+/home/d3fix/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar = 1744714556391
+/home/d3fix/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar = 1744714553232
+/home/d3fix/.m2/repository/org/slf4j/jul-to-slf4j/2.0.13/jul-to-slf4j-2.0.13.jar = 1744714553432
+/home/d3fix/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar = 1655206218000
+/home/d3fix/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar = 1744714554085
+/home/d3fix/.m2/repository/org/thymeleaf/thymeleaf-spring6/3.1.2.RELEASE/thymeleaf-spring6-3.1.2.RELEASE.jar = 1744714547068
+/home/d3fix/.m2/repository/org/thymeleaf/thymeleaf/3.1.2.RELEASE/thymeleaf-3.1.2.RELEASE.jar = 1744714548953
+/home/d3fix/.m2/repository/org/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar = 1690724932000
+/home/d3fix/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar = 1522429553000
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.5/spring-boot-starter-web-3.2.5.jar = 1744714549186
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.5/spring-boot-starter-json-3.2.5.jar = 1744714549427
+/home/d3fix/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar = 1744714551989
+/home/d3fix/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar = 1744714552204
+/home/d3fix/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar = 1744714552836
+/home/d3fix/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.4/jackson-datatype-jdk8-2.15.4.jar = 1744714553045
+/home/d3fix/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.4/jackson-datatype-jsr310-2.15.4.jar = 1744714552413
+/home/d3fix/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.4/jackson-module-parameter-names-2.15.4.jar = 1744714553025
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.5/spring-boot-starter-tomcat-3.2.5.jar = 1744714553183
+/home/d3fix/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar = 1744714551839
+/home/d3fix/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.20/tomcat-embed-websocket-10.1.20.jar = 1744714552200
+/home/d3fix/.m2/repository/org/springframework/spring-web/6.1.6/spring-web-6.1.6.jar = 1744714543920
+/home/d3fix/.m2/repository/io/micrometer/micrometer-observation/1.12.5/micrometer-observation-1.12.5.jar = 1744714541617
+/home/d3fix/.m2/repository/io/micrometer/micrometer-commons/1.12.5/micrometer-commons-1.12.5.jar = 1744714553696
+/home/d3fix/.m2/repository/org/springframework/spring-webmvc/6.1.6/spring-webmvc-6.1.6.jar = 1744714555178
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot/3.2.5/spring-boot-3.2.5.jar = 1744714552391
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.5/spring-boot-autoconfigure-3.2.5.jar = 1744714555437
+/home/d3fix/.m2/repository/org/springframework/spring-core/6.1.6/spring-core-6.1.6.jar = 1744714538322
+/home/d3fix/.m2/repository/org/springframework/spring-jcl/6.1.6/spring-jcl-6.1.6.jar = 1744714538431
+/home/d3fix/.m2/repository/org/springframework/security/spring-security-core/6.2.4/spring-security-core-6.2.4.jar = 1744714537444
+/home/d3fix/.m2/repository/org/springframework/security/spring-security-crypto/6.2.4/spring-security-crypto-6.2.4.jar = 1744714539834
+/home/d3fix/.m2/repository/org/springframework/security/spring-security-web/6.2.4/spring-security-web-6.2.4.jar = 1744714548580
+/home/d3fix/.m2/repository/org/springframework/security/spring-security-taglibs/6.2.4/spring-security-taglibs-6.2.4.jar = 1744714536048
+/home/d3fix/.m2/repository/org/springframework/security/spring-security-acl/6.2.4/spring-security-acl-6.2.4.jar = 1744714536449
+/home/d3fix/.m2/repository/org/springframework/spring-jdbc/6.1.6/spring-jdbc-6.1.6.jar = 1744714539128
+/home/d3fix/.m2/repository/org/springframework/spring-aop/6.1.6/spring-aop-6.1.6.jar = 1744714538045
+/home/d3fix/.m2/repository/org/springframework/spring-beans/6.1.6/spring-beans-6.1.6.jar = 1744714537104
+/home/d3fix/.m2/repository/org/springframework/spring-context/6.1.6/spring-context-6.1.6.jar = 1744714539524
+/home/d3fix/.m2/repository/org/springframework/spring-expression/6.1.6/spring-expression-6.1.6.jar = 1744714541408
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.5/spring-boot-starter-data-jpa-3.2.5.jar = 1744714544117
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.5/spring-boot-starter-aop-3.2.5.jar = 1744714544327
+/home/d3fix/.m2/repository/org/aspectj/aspectjweaver/1.9.22/aspectjweaver-1.9.22.jar = 1744714546778
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.5/spring-boot-starter-jdbc-3.2.5.jar = 1744714546917
+/home/d3fix/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar = 1744714539930
+/home/d3fix/.m2/repository/org/springframework/data/spring-data-jpa/3.2.5/spring-data-jpa-3.2.5.jar = 1744714546700
+/home/d3fix/.m2/repository/org/springframework/data/spring-data-commons/3.2.5/spring-data-commons-3.2.5.jar = 1744714548046
+/home/d3fix/.m2/repository/org/springframework/spring-orm/6.1.6/spring-orm-6.1.6.jar = 1744714536070
+/home/d3fix/.m2/repository/org/springframework/spring-aspects/6.1.6/spring-aspects-6.1.6.jar = 1744714553472
+/home/d3fix/.m2/repository/org/springframework/data/spring-data-redis/3.3.1/spring-data-redis-3.3.1.jar = 1744714554474
+/home/d3fix/.m2/repository/org/springframework/data/spring-data-keyvalue/3.2.5/spring-data-keyvalue-3.2.5.jar = 1744714554965
+/home/d3fix/.m2/repository/org/springframework/spring-tx/6.1.6/spring-tx-6.1.6.jar = 1744714539695
+/home/d3fix/.m2/repository/org/springframework/spring-oxm/6.1.6/spring-oxm-6.1.6.jar = 1744714550109
+/home/d3fix/.m2/repository/org/springframework/spring-context-support/6.1.6/spring-context-support-6.1.6.jar = 1744714551066
+/home/d3fix/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar = 1744714535832
+/home/d3fix/.m2/repository/redis/clients/jedis/5.1.3/jedis-5.1.3.jar = 1744714550512
+/home/d3fix/.m2/repository/org/apache/commons/commons-pool2/2.12.0/commons-pool2-2.12.0.jar = 1744714550926
+/home/d3fix/.m2/repository/org/json/json/20231013/json-20231013.jar = 1744714551198
+/home/d3fix/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar = 1744714551914
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.5/spring-boot-starter-validation-3.2.5.jar = 1744714552252
+/home/d3fix/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.20/tomcat-embed-el-10.1.20.jar = 1744714548473
+/home/d3fix/.m2/repository/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar = 1744714550267
+/home/d3fix/.m2/repository/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar = 1744714552019
+/home/d3fix/.m2/repository/org/hibernate/orm/hibernate-core/6.5.1.Final/hibernate-core-6.5.1.Final.jar = 1744714559568
+/home/d3fix/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar = 1645787726000
+/home/d3fix/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar = 1648723059000
+/home/d3fix/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar = 1744714540475
+/home/d3fix/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar = 1744714551519
+/home/d3fix/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar = 1744714539931
+/home/d3fix/.m2/repository/net/bytebuddy/byte-buddy/1.14.13/byte-buddy-1.14.13.jar = 1744714548024
+/home/d3fix/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar = 1684690120000
+/home/d3fix/.m2/repository/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar = 1744714539831
+/home/d3fix/.m2/repository/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar = 1744714537902
+/home/d3fix/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar = 1744714537802
+/home/d3fix/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.5/spring-boot-starter-security-3.2.5.jar = 1744714538265
+/home/d3fix/.m2/repository/org/springframework/security/spring-security-config/6.2.4/spring-security-config-6.2.4.jar = 1744714539668
+/home/d3fix/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar = 1744714550092
+/home/d3fix/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar = 1653588099000
+/home/d3fix/.m2/repository/org/glassfish/jakarta.el/3.0.3/jakarta.el-3.0.3.jar = 1744714540232
+/home/d3fix/.m2/repository/org/hibernate/hibernate-entitymanager/5.6.15.Final/hibernate-entitymanager-5.6.15.Final.jar = 1744714540324
+/home/d3fix/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar = 1744714555233
+/home/d3fix/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar = 1744714555784
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/src/main/java = 1744811771875
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/element-list = 1744811949630
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/serialized-form.html = 1744811949709
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/overview-tree.html = 1744811949808
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/index.html = 1744811949810
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/allclasses-index.html = 1744811949824
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/allpackages-index.html = 1744811949826
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/module-search-index.js = 1744811949826
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/package-search-index.js = 1744811949826
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/type-search-index.js = 1744811949826
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/member-search-index.js = 1744811949826
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/tag-search-index.js = 1744811949827
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/index-all.html = 1744811949840
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/search.html = 1744811949841
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/overview-summary.html = 1744811949841
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/help-doc.html = 1744811949843
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/stylesheet.css = 1744811949844
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/script.js = 1744811949844
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/copy.svg = 1744811949845
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/link.svg = 1744811949845
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/search.js = 1744811949846
+/home/d3fix/IdeaProjects/pet-project-coffee-delivery/target/site/apidocs/search-page.js = 1744811949846

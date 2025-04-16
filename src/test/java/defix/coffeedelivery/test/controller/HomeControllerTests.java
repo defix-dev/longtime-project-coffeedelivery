@@ -1,4 +1,4 @@
-package defix.coffeedelivery.home.api.controller;
+package defix.coffeedelivery.test.controller;
 
 import defix.coffeedelivery.common.config.URIConstant;
 import defix.coffeedelivery.home.api.dto.response.FeedbackDTO;
@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ControllerTests
-class HomeControllerTest {
+class HomeControllerTests {
     @Autowired
     private MockMvc mockMvc;
 
