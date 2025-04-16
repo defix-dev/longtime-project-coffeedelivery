@@ -1,7 +1,7 @@
 $(document).ready(() => {
     $(".filter-type").click((event) => {
         $.ajax({
-            url: "/catalog/change_filter_type",
+            url: "/api/v1/catalog/change_filter_type",
             type: "POST",
             data: {type: event.target.innerHTML}
         });
@@ -9,7 +9,7 @@ $(document).ready(() => {
 
     $(".price-input__min-price--input").change((event) => {
         $.ajax({
-            url: "/catalog/change_filter_minPrice",
+            url: "/api/v1/catalog/change_filter_minPrice",
             type: "POST",
             data: {minPrice: event.target.value}
         });
@@ -17,7 +17,7 @@ $(document).ready(() => {
 
     $(".price-input__max-price--input").change((event) => {
         $.ajax({
-            url: "/catalog/change_filter_maxPrice",
+            url: "/api/v1/catalog/change_filter_maxPrice",
             type: "POST",
             data: {maxPrice: event.target.value}
         });

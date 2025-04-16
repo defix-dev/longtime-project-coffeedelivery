@@ -12,7 +12,7 @@ $(document).ready(() => {
         };
 
         $.ajax({
-            url: "/authentication/register",
+            url: "/api/v1/auth/register",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(accountDTO),

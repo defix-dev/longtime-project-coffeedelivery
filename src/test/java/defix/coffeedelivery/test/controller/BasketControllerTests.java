@@ -48,7 +48,7 @@ public class BasketControllerTests {
             mockedStatic.when(() -> BasketService.convertBasketToDTO(baskets))
                     .thenReturn(Collections.emptySet());
 
-            mockMvc.perform(get("/api/get_baskets"))
+            mockMvc.perform(get("/api/v1/baskets"))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json"));
         }
@@ -64,7 +64,7 @@ public class BasketControllerTests {
         when(accountService.getCurrentAccount()).thenReturn(account);
         doNothing().when(basketService).deleteBasket(eq(1), eq(baskets));
 
-        mockMvc.perform(delete("/basket/delete?id=1"))
+        mockMvc.perform(delete("/api/v1/baskets/1"))
                 .andExpect(status().isOk());
     }
 
@@ -73,7 +73,7 @@ public class BasketControllerTests {
     public void testToPayment() throws Exception {
         when(basketService.toPayment(anyInt(), any())).thenReturn(ResponseEntity.ok().build());
 
-        mockMvc.perform(post("/basket/buy?id=1"))
+        mockMvc.perform(post("/api/v1/baskets/1"))
                 .andExpect(status().isOk());
     }
 }

@@ -14,7 +14,7 @@ export function searchItems() {
     const urlParam = $(".nav__search-panel--input").val();
     $(document).ready(() => {
         $.ajax({
-            url: `/api/search?value=${urlParam}`,
+            url: `/api/v1/catalog/search?value=${urlParam}`,
             type: "GET",
             success: (data) => {
                 const resultData = [];

@@ -37,16 +37,4 @@ public class HomeController {
         homeService.setupFeedbackOptions(session);
         return Redirect.changePage(URIConstant.HOME);
     }
-
-    @GetMapping("/api/load_feedbacks")
-    @ResponseBody
-    public ResponseEntity<Map<String, FeedbackDTO>> loadFeedbacks(HttpSession session) {
-        return ResponseEntity.ok(homeService.loadFeedbacks(session));
-    }
-
-    @PostMapping("/home/post_feedback")
-    public ResponseEntity<Void> postFeedback(@RequestParam("feedback") String feedback) {
-        homeService.postFeedback(feedback);
-        return ResponseEntity.ok().build();
-    }
 }

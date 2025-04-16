@@ -26,7 +26,7 @@ public class CatalogControllerTests {
     @Test
     @WithMockUser
     public void testChangeFilterType() throws Exception {
-        mockMvc.perform(post("/catalog/change_filter_type")
+        mockMvc.perform(post("/api/v1/catalog/change_filter_type")
                 .param("type", "Chocolate"))
                 .andExpect(status().isOk());
 
@@ -36,7 +36,7 @@ public class CatalogControllerTests {
     @Test
     @WithMockUser
     public void testChangeFilterMinPrice() throws Exception {
-        mockMvc.perform(post("/catalog/change_filter_minPrice")
+        mockMvc.perform(post("/api/v1/catalog/change_filter_minPrice")
                         .param("minPrice", "150"))
                 .andExpect(status().isOk());
 
@@ -46,7 +46,7 @@ public class CatalogControllerTests {
     @Test
     @WithMockUser
     public void testChangeFilterMaxPrice() throws Exception {
-        mockMvc.perform(post("/catalog/change_filter_maxPrice")
+        mockMvc.perform(post("/api/v1/catalog/change_filter_maxPrice")
                         .param("maxPrice", "150"))
                 .andExpect(status().isOk());
 
@@ -56,7 +56,7 @@ public class CatalogControllerTests {
     @Test
     @WithMockUser
     public void testAddToBasket() throws Exception {
-        mockMvc.perform(post("/catalog/add_to_basket")
+        mockMvc.perform(post("/api/v1/catalog")
                         .param("id", "1"))
                 .andExpect(status().isOk());
 

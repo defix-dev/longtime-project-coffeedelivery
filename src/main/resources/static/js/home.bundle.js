@@ -33601,7 +33601,7 @@ $(document).ready(function () {
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(document.getElementById('root'));
 function loadFeedbacks() {
   $.ajax({
-    url: "/api/load_feedbacks",
+    url: "/api/v1/feedbacks",
     type: "GET",
     success: function success(data) {
       var resultData = [];

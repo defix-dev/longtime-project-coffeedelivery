@@ -56,7 +56,7 @@ class HomeControllerTests {
         mockFeedbacks.put("1", new FeedbackDTO("Great coffee!", "user1"));
         Mockito.when(homeService.loadFeedbacks(any())).thenReturn(mockFeedbacks);
 
-        mockMvc.perform(get("/api/load_feedbacks"))
+        mockMvc.perform(get("/api/v1/feedbacks"))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(jsonPath("$.1.feedback").value("Great coffee!"))
@@ -68,7 +68,7 @@ class HomeControllerTests {
     void testPostFeedback_ReturnsOk() throws Exception {
         Mockito.doNothing().when(homeService).postFeedback("Awesome!");
 
-        mockMvc.perform(post("/home/post_feedback")
+        mockMvc.perform(post("/api/v1/feedbacks")
                         .param("feedback", "Awesome!")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED))
                 .andExpect(status().isOk());

@@ -14,7 +14,7 @@
 <main>
     <div class="main">
         <p class="main__header">Форма смены данных</p>
-        <form method="post" th:action="@{/edit_contact_data/save}" class="main__form-container">
+        <form method="put" th:action="@{/api/v1/users/me/contact_data}" class="main__form-container">
                 <!-- [ USERNAME INPUT ] -->
             <div class="input-block">
                 <label for="phoneNumber">Номер телефона</label>

@@ -24,8 +24,8 @@
                 <a th:href="@{/catalog}" class="order-panel__item">Каталог</a>
             </div>
             <div class="header__auth-nav">
-                <a href="/authentication?form=login" class="header__button header__button--login">Вход</a>
-                <a href="/authentication?form=register" class="header__button header__button--register">Регистрация</a>
+                <a href="/api/v1/auth?form=login" class="header__button header__button--login">Вход</a>
+                <a href="/api/v1/auth?form=register" class="header__button header__button--register">Регистрация</a>
             </div>
             <div class="header__after-auth" style="display: none">
                 <a th:href="@{/edit_contact_data}" class="header__button header__button--register">Сменить данные</a>

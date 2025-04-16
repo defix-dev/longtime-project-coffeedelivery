@@ -32,7 +32,7 @@ public class AuthControllerTests {
     @WithMockUser
     public void testCheckAccountStatus_Authorized() throws Exception {
         when(accountService.isAuthenticated()).thenReturn(true);
-        mockMvc.perform(get("/authentication/check_account_status")
+        mockMvc.perform(get("/api/v1/auth/authorized")
                 .contentType("application/json"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
@@ -42,7 +42,7 @@ public class AuthControllerTests {
     @Test
     public void testCheckAccountStatusFailure_Unauthorized() throws Exception {
         when(accountService.isAuthenticated()).thenReturn(false);
-        mockMvc.perform(get("/authentication/check_account_status")
+        mockMvc.perform(get("/api/v1/auth/authorized")
                         .contentType("application/json"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
@@ -67,7 +67,7 @@ public class AuthControllerTests {
                     }
                 """, phone, password, confirmPassword);
 
-        mockMvc.perform(post("/authentication/register")
+        mockMvc.perform(post("/api/v1/auth/register")
                 .content(accountDataJson)
                 .contentType("application/json"))
                 .andExpect(status().isOk());
@@ -93,7 +93,7 @@ public class AuthControllerTests {
                     }
                 """, phone, password, confirmPassword);
 
-        mockMvc.perform(post("/authentication/register")
+        mockMvc.perform(post("/api/v1/auth/register")
                         .content(accountDataJson)
                         .contentType("application/json"))
                 .andExpect(status().isBadRequest());

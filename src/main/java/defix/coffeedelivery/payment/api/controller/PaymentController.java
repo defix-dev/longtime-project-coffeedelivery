@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+// ЗАГЛУШКА
+
 @Controller
 @SessionAttributes("payment_dto")
 @RequestMapping("/payment")

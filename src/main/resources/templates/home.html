@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="main__input-feedback" th:if="${is_authenticated}">
-                <form method="post" th:action="@{/home/post_feedback}">
+                <form method="post" th:action="@{/api/v1/feedbacks}">
                     <textarea name="feedback" class="base-input" placeholder="Введите отзыв..."></textarea>
                     <input type="submit" value="Опубликовать" class="main__input-feedback--post-btn" />
                 </form>

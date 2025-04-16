@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" th:href="@{/css/authentication_page_style.css}">
+    <link rel="stylesheet" th:href="@{/css/api/v1/auth_page_style.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     <div class="main">
         <p class="main__header" id="main-reg-header">Форма регистрации</p>
         <div class="main__auth-panel main__auth-panel--register">
-            <form method="post" th:action="@{/authentication/register}" class="register-form">
+            <form method="post" th:action="@{/api/v1/auth/register}" class="register-form">
                 <div class="input-block">
                     <label for="reg-phoneNumber">Номер телефона<p style="color: #FE7028">*</p></label>
                     <input type="text" placeholder="Enter phone number..." id="reg-phoneNumber" name="reg-phoneNumber" class="base-input" />
@@ -32,7 +32,7 @@
         </div>
         <p class="main__header" id="main-log-header" style="display: none">Форма авторизации</p>
         <div class="main__auth-panel main__auth-panel--login" style="display: none">
-            <form method="post" th:action="@{/authentication}">
+            <form method="post" th:action="@{/api/v1/auth}">
                 <div class="input-block">
                     <label for="log-phoneNumber">Номер телефона<p style="color: #FE7028">*</p></label>
                     <input type="text" placeholder="Enter phone number..." id="log-phoneNumber" name="log-phoneNumber" class="base-input" />
@@ -54,6 +54,6 @@
     <div class="footer"></div>
 </footer>
 <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
-<script th:src="@{/js/authentication.js}"></script>
+<script th:src="@{/js/api/v1/auth.js}"></script>
 </body>
 </html>

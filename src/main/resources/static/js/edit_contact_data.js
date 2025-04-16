@@ -8,8 +8,8 @@ $(document).ready(() => {
             password: formData.get("password")
         };
         $.ajax({
-            url: "/edit_contact_data/save",
-            type: "POST",
+            url: "/api/v1/users/me/contact_data",
+            type: "PUT",
             contentType: "application/json",
             data: JSON.stringify(contactAccountDTO),
             success: (data, textStatus, jqXHR) => {

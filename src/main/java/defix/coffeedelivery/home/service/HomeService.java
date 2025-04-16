@@ -32,7 +32,7 @@ public class HomeService {
         CookieHandler.setDefault(manager);
         HttpClient client = HttpClient.newBuilder().cookieHandler(CookieHandler.getDefault()).build();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8888/authentication/check_account_status"))
+                .uri(URI.create("http://localhost:8888/api/v1/auth/authorized"))
                 .header("Content-Type", "application/json")
                 .header("Cookie", "JSESSIONID=" + session.getId())
                 .GET().build();

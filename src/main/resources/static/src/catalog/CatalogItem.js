@@ -40,7 +40,7 @@ export default function CatalogItem({ data }) {
 
     function addProductToBasket(id) {
         $.ajax({
-            url: `/catalog/add_to_basket?id=${id}`,
+            url: `/api/v1/catalog?id=${id}`,
             type: "POST",
             success: () => alert(`Товар с айди [${id}] успешно добавлен в корзину ;)`)
         })

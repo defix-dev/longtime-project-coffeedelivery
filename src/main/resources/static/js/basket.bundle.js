@@ -20,7 +20,7 @@ function BasketItem(_ref) {
   var ids = data.ids;
   function deleteBasket(sequence) {
     $.ajax({
-      url: "/basket/delete?id=".concat(ids[sequence]),
+      url: "/api/v1/baskets?id=".concat(ids[sequence]),
       type: "DELETE",
       success: function success() {
         location.reload();
@@ -33,7 +33,7 @@ function BasketItem(_ref) {
   }
   function buyBasketProduct(id) {
     $.ajax({
-      url: "/basket/buy?id=".concat(id),
+      url: "/api/v1/baskets?id=".concat(id),
       type: "POST",
       success: function success(data, status, headers) {
         window.location.href = headers.getResponseHeader("Location");
@@ -169,7 +169,7 @@ function CatalogItem(_ref) {
   }, [icon]);
   function addProductToBasket(id) {
     $.ajax({
-      url: "/catalog/add_to_basket?id=".concat(id),
+      url: "/api/v1/catalog?id=".concat(id),
       type: "POST",
       success: function success() {
         return alert("\u0422\u043E\u0432\u0430\u0440 \u0441 \u0430\u0439\u0434\u0438 [".concat(id, "] \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443 ;)"));
@@ -34016,7 +34016,7 @@ __webpack_require__.r(__webpack_exports__);
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById("root"));
 $(document).ready(function () {
   $.ajax({
-    url: "/api/get_baskets",
+    url: "/api/v1/baskets",
     type: "GET",
     success: function success(data) {
       var resultData = {};

@@ -5,7 +5,7 @@ export default function BasketItem({data}) {
 
     function deleteBasket(sequence) {
         $.ajax({
-           url: `/basket/delete?id=${ids[sequence]}`,
+           url: `/api/v1/baskets/${ids[sequence]}`,
            type: "DELETE",
            success: () => {
                location.reload()
@@ -19,7 +19,7 @@ export default function BasketItem({data}) {
 
     function buyBasketProduct(id) {
         $.ajax({
-            url: `/basket/buy?id=${id}`,
+            url: `/api/v1/baskets/${id}`,
             type: "POST",
             success: (data, status, headers) => {
                 window.location.href = headers.getResponseHeader("Location");

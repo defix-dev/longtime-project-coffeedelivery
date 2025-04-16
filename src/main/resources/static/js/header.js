@@ -1,6 +1,6 @@
 $(document).ready(() => {
     $.ajax({
-        url: "/authentication/check_account_status",
+        url: "/api/v1/auth/authorized",
         type: "GET",
         success: (data) => {
             setViewLogoutStatus(data)

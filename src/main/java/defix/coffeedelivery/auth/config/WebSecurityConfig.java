@@ -44,7 +44,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(
                         httpCustomizer ->
                                 httpCustomizer
-                                        .requestMatchers("/api/**", "/instruction", "/js/**", "/src/**", "/site_error", "/css/**", "/images/**", "/home/**", "/", "/authentication", "/authentication/**", "/remember_password")
+                                        .requestMatchers("/api/**", "/instruction", "/js/**", "/src/**", "/site_error", "/css/**", "/images/**", "/home/**", "/", "/api/v1/auth", "/api/v1/auth/**", "/remember_password")
                                         .permitAll()
                                         .anyRequest()
                                         .authenticated()
@@ -53,7 +53,7 @@ public class WebSecurityConfig {
                         loginPage
                                 .usernameParameter("log-phoneNumber")
                                 .passwordParameter("log-password")
-                                .loginPage("/authentication")
+                                .loginPage("/api/v1/auth")
                                 .defaultSuccessUrl("/home")
                                 .permitAll()
                 )
