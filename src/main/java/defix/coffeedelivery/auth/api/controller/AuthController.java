@@ -48,7 +48,6 @@ public class AuthController {
      *         {@code false} otherwise
      */
     @GetMapping("/authorized")
-    @ResponseBody
     public ResponseEntity<Boolean> checkAccountStatus() {
         return ResponseEntity.ok().body(accountService.isAuthenticated());
     }
@@ -60,7 +59,6 @@ public class AuthController {
      * @return empty {@link ResponseEntity} with status 200 OK if registration succeeds
      */
     @PostMapping("/register")
-    @ResponseBody
     public ResponseEntity<Void> register(@Valid @RequestBody RegisterAccountDTO accountData) {
         accountService.registerAccount(accountData);
         return ResponseEntity.ok().build();
